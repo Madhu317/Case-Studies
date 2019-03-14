@@ -1,0 +1,39 @@
+Since each shop might have different sales we are going to create a model for each shop
+
+
+We need to summarize item count for month for training our model to predict monthly item sale count:
+
+Group by timeBlock and itemID so that we get our new response variable (item_count_month)
+
+
+we would get something like below data set:
+
+for shop1...... Shop 60
+
+timeblock,itemid,item_count_month
+
+0,112,5
+
+0,113,4
+
+0,114,1
+
+1,112,5
+
+2,112,2
+
+
+Initially we are going to pick the following variables for our model
+
+x--> time block (independent)
+
+y--> item id (independent)
+
+z--> item_count_month (dependent)
+
+
+
+After training, we will have s1 to s60 model respectively for shop 1 to 60
+
+
+then we will iterate the test dataset on each model and append the result to a file which will be our final out put file
